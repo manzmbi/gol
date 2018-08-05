@@ -13,6 +13,10 @@ Check down to the links for more details.
 * [Wikipedia Page on Cellular Automaton][5]
 * [John Conway interesting interview][6]
 
+### GOL Design with Legends
+
+![GOL Design](./design/gol_design.png)
+
 [//]: # (Standford detailed page of Game of Life reference link)
 [1]:http://web.stanford.edu/~cdebs/GameOfLife/
 
