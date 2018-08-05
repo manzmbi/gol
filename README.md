@@ -17,6 +17,17 @@ Check down to the links for more details.
 
 ![GOL Design](./design/gol_design.png)
 
+* ##### Annotations
+1. The Start Button
+2. The Random Button
+3. The Reset Button
+4. The Pause Button
+5. The Continue Button
+6. A Death Cell
+7. A Living Cell
+8. The Table (Which is where the representation of the generations will be taking place)
+
+
 [//]: # (Standford detailed page of Game of Life reference link)
 [1]:http://web.stanford.edu/~cdebs/GameOfLife/
 
