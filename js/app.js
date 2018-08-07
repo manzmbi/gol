@@ -1,60 +1,26 @@
-// le model
-let model = {
-    nombreDeLigne: 15,
-    nombreDeColonne: 16,
+window.onload = function(){
+    let nombreDeLigne = 15;
+    let nombreDeColonne = 15;
 
-    // creation d'un tableau
-    creerTableau: function () {
-        let tableau = document.getElementById('tableau');
-        let tr = document.createElement('tr');
-        let td = document.createElement('td');
-        for(let i = 0; i < this.nombreDeLigne; i ++) {
-            tr.appendChild(td)
-            for(let j = 0; j < this.nombreDeColonne; j++) {
+    let table = document.createElement("table");
 
-            }
+    let tableauId = document.getElementById("tableauId");
+
+    table.appendChild(tableauId);
+
+    // Creation de lignes
+    for (let i = 0; i < nombreDeLigne; i++){
+        let tr = document.createElement("tr");
+        tableauId.appendChild(tr);
+
+        // Creation de cellules
+        for (let j = 0; j < nombreDeColonne; j++) {
+            let td = document.createElement("td");
+            tr.appendChild(td);
         }
-        }
-        
-
     }
-
-
-
-
-
+    body.appendChild(tableau);
 
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// la vue du Octopus
-let view = {
-
-}
-
-
-
-
-//l'Octopus
-let controller = {
-
-}

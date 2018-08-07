@@ -1,21 +1,37 @@
 body {
-    background-color: #28443399;
+    background-color:white;
     margin: 0;
     padding: 0;
 }
 
 /* les dimmensions et bgc du tableau */
 table {
-    width: 150px;
-    height: 150px;
-    background: gray;
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-collapse: collapse;
+    margin: 20px;
 }
 
+table td {
+    padding: 15px;
+    border: 1px solid gray;
+    border-collapse: collapse;
+    transition: background-color .1s;
+}
+
+td:hover {
+    background-color: black;
+  }
 
 /* les parametres boutons*/
 .bouton {
     display: inline;
-    border-radius: 10px;
+    width: 200px;
+    height: 90px;
+    background-color: white;
+    font-size: 50px;
+    margin-right: 30px;
 }
 
 
