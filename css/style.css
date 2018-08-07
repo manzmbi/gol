@@ -12,4 +12,18 @@ table {
 }
 
 
+/* les parametres boutons*/
+.bouton {
+    display: inline;
+    border-radius: 10px;
+}
 
+
+/* les styles de cellule mortes ou vivantes*/
+.vivant {
+    background-color: white;
+}
+
+.mort {
+    background-color: gray;
+}
