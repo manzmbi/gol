@@ -46,6 +46,20 @@ model.creerTable()
 
   
 
+
+
     
-  
- 
+  // l'object vue du naavigateur
+ let vue = {
+
+
+ }
+
+
+
+
+
+ //l'objet controleur
+ let controleur = {
+
+ }
