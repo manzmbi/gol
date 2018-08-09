@@ -6,13 +6,13 @@ body {
 
 /* les dimmensions et bgc du tableau */
 table {
-    width: 100px;
-    height: 100px;
     background: white;
     border-collapse: collapse;
     margin: 20px;
 }
 
+
+/* les parametres td*/
 table td {
     padding: 15px;
     border: 1px solid gray;
@@ -20,13 +20,14 @@ table td {
     transition: background-color .1s;
 }
 
+/* les parametres boutons*/
 td:hover {
     background-color: black;
   }
 
 /* les parametres boutons*/
 .bouton {
-    display: inline;
+    display: inline-block;
     width: 200px;
     height: 90px;
     background-color: white;

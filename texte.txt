@@ -1,0 +1,10 @@
+
+les etapes pour creer une table 
+
+1. On crée d'abord l'élément <table>.
+2. Ensuite, On crée l'élément <tbody> qui est un enfant de l'élément <table>.
+3. Puis, grâce à une boucle, on crée les éléments <tr>, qui sont des enfants de l'élément <tbody>.
+4. Pour chaque élément <tr>, on emploie une boucle pour créer les éléments enfants <td>.
+5. Puis l'élément <tbody> est attaché à son élément parent <table> grace à 
+6. Enfin, <table> est rattaché à <body> 
+
