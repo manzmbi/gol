@@ -8,8 +8,8 @@ creerTable = function(){
   let body = document.getElementsByTagName("body")[0];
 
    // On crée d'abord l'élément <table>.
-  let table = document.createElement("table");
-   // let table = document.getElementById('table');
+  // let table = document.createElement("table");
+   let table = document.getElementById('table');
 
   // Ensuite, On crée l'élément <tbody> qui est un enfant de l'élément <table>.
   let tbody = document.createElement("tbody");
@@ -33,10 +33,9 @@ creerTable = function(){
   }
  
   // Puis l'élément <tbody> est attaché à son élément parent <table>
+ 
   table.appendChild(tbody);
 
-  // Enfin, <table> est rattaché à <body>   
-  body.appendChild(table)
 
 } 
 
@@ -55,18 +54,23 @@ for ( let i = 0; i < td.length; i++) {
 
 // changer le contenue du bouton start en pause
 let bouton = document.querySelector('.bouton');
+// Acceder a l'element
 bouton.addEventListener('click', function() {
-bouton.textContent = 'pause';
-// changer le contenu du bouton pause en continue
-if(bouton.textContent =='pause') {
-  bouton.addEventListener('click', function() {
-    bouton.textContent = 'continue'
-})
+if (bouton.textContent === 'Start'){
+  bouton.textContent = 'Pause';
+  console.log('Pause');
 }
-else if (bouton.textContent == 'continue') {
-bouton.addEventListener('click', function () {
-  bouton.textContent = 'pause';
-})
+
+else if (bouton.textContent === 'Pause'){
+  bouton.textContent = 'Continue';
+  console.log('Continue');
+  
+}
+
+else if (bouton.textContent === 'Continue'){
+  bouton.textContent = 'Pause';
+  console.log('Pause');
+  
 }
 
 

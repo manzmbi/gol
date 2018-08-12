@@ -20,10 +20,6 @@ table td {
     transition: background-color .1s;
 }
 
-/* les parametres boutons*/
-td:hover {
-    background-color: black;
-  }
 
 /* les parametres boutons*/
 .bouton {
