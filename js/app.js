@@ -6,16 +6,14 @@ let model = {
     let nombreDeColonne = 50;
     
     // On acceder a l'element Body
-    let body = document.getElementsByTagName("body")
+    let body = document.getElementsByTagName("body");
 
-     // On crée d'abord l'élément <table>.
-    // let table = document.createElement("table");
-    let table = document.getElementsByTagName('table')[0]
+     // On acceder a l'element <table>.
+    let table = document.getElementById('table');
 
     // Ensuite, On crée l'élément <tbody> qui est un enfant de l'élément <table>.
     let tbody = document.createElement("tbody");
 
-   
     // Puis, grâce à une boucle, on crée les éléments <tr>, qui sont des enfants de l'élément <tbody>.
     for (let i = 0; i < nombreDeLigne; i++) {
       let tr = document.createElement("tr");
@@ -25,7 +23,7 @@ let model = {
         let td = document.createElement("td");
        // let textcell = document.createTextNode(i+j);
         // td.appendChild(textcell);
-        td.setAttribute("id",i+j);
+        // td.setAttribute("id",i+j);
         tr.appendChild(td);
       }
    
@@ -36,17 +34,13 @@ let model = {
     // Puis l'élément <tbody> est attaché à son élément parent <table>
     table.appendChild(tbody);
 
-    // Enfin, <table> est rattaché à <body>   
-    body.appendChild(table);
-
   }
 }
+// appeler la fonction creerTable
 model.creerTable()
 
 
   
-
-
 
     
   // l'object vue du naavigateur
@@ -61,5 +55,6 @@ model.creerTable()
 
  //l'objet controleur
  let controleur = {
+   
 
  }
