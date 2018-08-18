@@ -1,20 +1,19 @@
+
 creerTable = function(){
 
   // Nombre des lignes et ceux des colonnes
   let nombreDeLigne = 50;
   let nombreDeColonne = 50;
   
-  // On acceder a l'element Body
-  let body = document.getElementsByTagName("body")[0];
+  // Acceder a l'element Body
+  let body = document.getElementsByTagName("body");
 
-   // On crée d'abord l'élément <table>.
-  // let table = document.createElement("table");
+   // On acceder a l'element table
    let table = document.getElementById('table');
 
   // Ensuite, On crée l'élément <tbody> qui est un enfant de l'élément <table>.
   let tbody = document.createElement("tbody");
 
- 
   // Puis, grâce à une boucle, on crée les éléments <tr>, qui sont des enfants de l'élément <tbody>.
   for (let i = 0; i < nombreDeLigne; i++) {
     let tr = document.createElement("tr");
@@ -24,7 +23,7 @@ creerTable = function(){
       let td = document.createElement("td");
      // let textcell = document.createTextNode(i+j);
       // td.appendChild(textcell);
-      td.setAttribute("id",i+j);
+      // td.setAttribute("id",i+j);
       tr.appendChild(td);
     }
  
@@ -33,14 +32,12 @@ creerTable = function(){
   }
  
   // Puis l'élément <tbody> est attaché à son élément parent <table>
- 
   table.appendChild(tbody);
 
 
 } 
 
 creerTable()
-
 
 // changer la couleur 
 let td = document.getElementsByTagName('td');
