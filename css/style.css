@@ -14,7 +14,7 @@ table {
 
 /* les parametres td*/
 table td {
-    padding: 15px;
+    padding: 5px;
     border: 1px solid gray;
     border-collapse: collapse;
     transition: background-color .1s;
