@@ -63,22 +63,49 @@ let view = {
       let bouton = document.querySelector('.bouton');
       // Ajouter un ecouteur puis l'evenement
       bouton.addEventListener('click', function() {
-        //Verification contenu bouton Start en Pause
+        //Verification contenu bouton Start en Pause 
       if (bouton.textContent === 'Start'){
+        // afficher les generations continuellement apres 100 ms
+        intervalId = setInterval(view.afficherProchaineGeneration, 100);
+        // changer son contenu en pause
         bouton.textContent = 'Pause';
-        setInterval(view.afficherProchaineGeneration, 100);
       }
+
         //Verification contenu bouton Pause en Continue
       else if (bouton.textContent === 'Pause'){
         bouton.textContent = 'Continue';  
-        clearInterval(setInterval(view.afficherProchaineGeneration, 100));
+        clearInterval(intervalId);
       }
         //Verification contenu bouton continue en pause
       else if (bouton.textContent === 'Continue'){
         bouton.textContent = 'Pause';
+        intervalId = setInterval(view.afficherProchaineGeneration, 100);
       }
       })
     },
+
+
+
+    // bouton reset
+    initialiserLesDonneesDansLeTableau : function() {
+      for ( let i = 0; i < model.nombreDeLigne; i++) {
+        for (let j = 0; j < model.nombreDeColonne; j++) {
+          // acceder au bouton reset
+          boutonReset = document.querySelectorAll('.bouton')[2];
+          // ajouter un evenement sur le bouton
+          boutonReset.addEventListener('click', function () {
+            // acceder aux table row
+            tr = document.getElementsByTagName('tr');
+            bouton = document.querySelectorAll('.bouton')[0];
+            // acceder aux chaques cellules du tableau et changer la classe en morte
+            tr[i].cells[j].className = 'mort';
+            // stopper les processus
+            clearInterval(intervalId);
+            bouton.textContent = 'Start'
+        })
+        }
+      }
+    }
 
   }
 
@@ -240,88 +267,7 @@ let controller = {
 window.onload =function() {
   controller.creerTable();
   view.randomClick();
+  view.initialiserLesDonneesDansLeTableau();
   view.changerContenuBouton1();
   view.changerColeurCellule();
 }
-
-
-
-
-// compter le nombre des cellules voisines et l'ajouter dans un tableau a deux dimension
-    
-  // acceder au tableau virtuel
-  // representationVirtuelle = [
-  //   [1,0,1,0,0],
-  //   [0,1,1,1,1],
-  //   [1,0,1,0,0],
-  //   [0,1,1,0,1],
-  //   [1,0,1,1,0],
-  //   [1,1,0,0,0]
-  // ]
-  
-  // // representation de chaque cellule voisine vivante
-  // let prochaineGeneration = [];
-
-  // for (let i = 0; i < model.nombreDeLigne.length; i++) {
-  //   for (let j = 0; j < model.nombreDeColonne.length; j++) {
-  //     let celluleVoisineParLigne = [];
-  //     prochaineGeneration.push(celluleVoisineParLigne);
-  //     // le nombre de  cellules voisines
-  //     let nombreDeCelluleVivante = 0;
-
-  //       // s'il existe une cellule vivante en haut-gauche, ajouter une cellule dans 'nombreDeCelluleVivante'
-  //       if (representationVirtuelle[i - 1] !== undefined && representationVirtuelle[j - 1] !== undefined) {
-  //         let topLeft = representationVirtuelle[i - 1][j - 1];
-  //         nombreDeCelluleVivante = nombreDeCelluleVivante + topLeft;
-  //       }
-
-  //       // s'il existe une cellule vivante en haut, ajouter une cellule dans 'nombreDeCelluleVivante'
-  //       if (representationVirtuelle[i - 1] !== undefined && representationVirtuelle[j + 0] !== undefined) {
-  //         let top = representationVirtuelle[i - 1][j + 0]
-  //         nombreDeCelluleVivante = nombreDeCelluleVivante + top;
-  //       }
-
-  //       // s'il existe une cellule vivante en haut-droit, ajouter une cellule dans 'nombreDeCelluleVivante'
-  //       if (representationVirtuelle[i - 1] !== undefined && representationVirtuelle[j + 1] !== undefined) {
-  //         let topRight = representationVirtuelle[i - 1][j + 1];
-  //         nombreDeCelluleVivante = nombreDeCelluleVivante + topRight;
-  //       }
-
-  //       // s'il existe une cellule vivante a gauche, ajouter une cellule dans 'nombreDeCelluleVivante'
-  //       if (representationVirtuelle[i + 0] !== undefined && representationVirtuelle[j - 1] !== undefined){
-  //         let left = representationVirtuelle[i + 0][j - 1];
-  //         nombreDeCelluleVivante = nombreDeCelluleVivante + left;
-  //       }
-
-  //       // s'il existe une cellule vivante a droit, ajouter une cellule dans 'nombreDeCelluleVivante'
-  //       if (representationVirtuelle[i + 0] !== undefined && representationVirtuelle[j + 1] ==undefined) {
-  //         let right = representationVirtuelle[i + 0][j + 1];
-  //         nombreDeCelluleVivante = nombreDeCelluleVivante + right;
-  //       }
-
-  //       // s'il existe une cellule vivante en Bas-Gauche, ajouter une cellule dans 'nombreDeCelluleVivante'
-  //       if (representationVirtuelle[i + 1] !== undefined && representationVirtuelle[j - 1] != undefined) {
-  //         let bottonLeft = representationVirtuelle[i + 1][j - 1];
-  //         nombreDeCelluleVivante = nombreDeCelluleVivante + bottonLeft;
-  //       }
-
-  //       // s'il existe une cellule vivante en Bas, ajouter une cellule dans 'nombreDeCelluleVivante'
-  //       if (representationVirtuelle[i + 1] !== undefined && representationVirtuelle[j + 0] !== undefined) {
-  //         let botton = representationVirtuelle[i + 1][j + 0];
-  //         nombreDeCelluleVivante = nombreDeCelluleVivante + botton;
-  //       }
-
-  //       // s'il existe une cellule vivante en Bas-Droit, ajouter une cellule dans 'nombreDeCelluleVivante'
-  //       if (representationVirtuelle[i + 1] !== undefined && representationVirtuelle[j + 1] !== undefined) {
-  //         let bottonRight = representationVirtuelle[i + 1][j + 1];
-  //         nombreDeCelluleVivante = nombreDeCelluleVivante + bottonRight;
-  //       }
-    
-  //     }
-  //   celluleVoisineParLigne.push(nombreDeCelluleVivante);
-    
-
-  //   }
-  
-
-
