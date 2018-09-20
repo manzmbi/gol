@@ -1,5 +1,5 @@
 body {
-    background-color:white;
+    background-color: white;
     margin: 0;
     padding: 0;
 }
@@ -9,32 +9,27 @@ table {
     background: white;
     border-collapse: collapse;
     margin: 10px;
-    width: 500px;
-    height: 500px;
-
+    width: 700px;
+    height: 700px;
 }
-
 
 /* les parametres td*/
 table td {
-    border: 1px solid gray;
-    /* border-collapse: collapse; */
+    border: 0.8px solid gray;
     /* transition: background-color .1s; */
 }
-
 
 /* les parametres boutons*/
 .bouton {
     display: inline-block;
-    width: 150px;
-    height: 50px;
+    width: 100px;
+    height: 30px;
     background-color: white;
-    font-size: 30px;
+    border: 0.8px solid #201f1f;
+    font-size: 10px;
+    font-weight: bold;
     margin-right: 10px;
-    margin: 10px;
-
 }
-
 
 /* les styles de cellule mortes ou vivantes*/
 .mort {
@@ -42,5 +37,5 @@ table td {
 }
 
 .vivant {
-    background-color: black;
+    background-color: #3a393c;
 }
